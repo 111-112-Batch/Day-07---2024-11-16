@@ -29,6 +29,13 @@
 // https://fakestoreapi.com/products
 let body="";
 
+Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Something went wrong!",
+    footer: '<a href="#">Why do I have this issue?</a>'
+  });
+
 fetch("https://fakestoreapi.com/products")
 .then(res=>res.json())
 .then(data=>{
@@ -37,7 +44,7 @@ fetch("https://fakestoreapi.com/products")
         
         body+= `
         <div class="col">
-<div class="card shadow-sm">
+<div class="card shadow-sm" data-aos="flip-left">
   <img src="${element.image}" alt="">
   <div class="card-body">
     <h5 class="card-text">${element.title}</h5>
