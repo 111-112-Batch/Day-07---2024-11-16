@@ -1,20 +1,27 @@
 
 
-const names=["saman","kamal","nimal","sunil"];
 
-document.write(names.toString());
+// document.write(names.toString());
 
 
-console.log(document);
+// console.log(document);
 
-document.getElementById("h1").innerText = names.toString();
 
-let body = "";
+const names = ["saman", "kamal", "nimal", "sunil"];
 
-for(let name of names){
-    body += `<li>${name}</li>`;
-    console.log(name);
+
+function addName() {
+    let txtUserInput = document.getElementById("txtInput").value;
+
+    names.push(txtUserInput);
+    
+    document.getElementById("h1").innerText = names.toString();
+
+    let body = "";
+
+    for (let name of names) {
+        body += `<li>${name}</li>`;
+    }
+    document.getElementById("oList").innerHTML = body;
 }
-
-document.getElementById("oList").innerHTML = body;
 
